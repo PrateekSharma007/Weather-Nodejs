@@ -35,21 +35,24 @@
         const getcurrentdate = () => { 
             const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
             let curr = new Date() ; 
-            console.log(weekday[curr.getDay()])
+            let day  = weekday[curr.getDay()]
+            return day ;
         }
 
         const getcurrentday = () => { 
             let date = new Date() ;
-            var month = date.getMonth() ; 
+            var month = date.getMonth() + 1; 
             
             console.log(date.getDate()) ; 
-            console.log(month)
+            <!-- console.log(month)  -->
+
+            return `${month}${date}`
 
         }
         getcurrentdate();
         getcurrentday() ;
 
-
+        curDate.innerHTML = getcurrentdate() + "|" +  getcurrentday()
     </script> 
 </body>
 </html>
